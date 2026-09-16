@@ -1,11 +1,18 @@
 #include <PS4Controller.h>
+#include <cmath>
 
 #define servoIn1 12
 #define servoIn2 13
 #define servoIn3 14
 #define servoIn4 15
 
+int right = 0;
+int left = 0;
 
+int rightForwardIn = 0;
+int rightBackwardIn = 0;
+int leftForwardIn = 0;
+int leftBackwardIn = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -20,20 +27,8 @@ void setup() {
   PS4.attachOnDisconnect(onDisconnect);
   PS4.begin();
 
-  Serial.println("Starting...")
+  Serial.println("Starting...");
 }
  
 void loop() {
-  rightForward();
-  leftForward();
-  delay(1000);
-  rightBackward();
-  leftBackward();
-  delay(1000);
-  rightForward();
-  leftStop();
-  delay(1000);
-  leftForward();
-  rightStop();
-  delay(1000);
 }
